@@ -1,15 +1,13 @@
 import streamlit as st
-st.write("APP BERHASIL DIMUAT")
 import pickle
-nb = pickle.load(open("model_nb.pkl", "rb"))
-svm = pickle.load(open("model_svm.pkl", "rb"))
-tfidf = pickle.load(open("tfidf.pkl", "rb"))
-import re
 
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
-from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFactory
+st.title("Analisis Sentimen Berita Ekonomi")
 
-
-
-
-
+try:
+    nb = pickle.load(open("model_nb.pkl", "rb"))
+    svm = pickle.load(open("model_svm.pkl", "rb"))
+    tfidf = pickle.load(open("tfidf.pkl", "rb"))
+    st.success("Model berhasil dimuat")
+except Exception as e:
+    st.error(f"Gagal memuat model: {e}")
+    st.stop()
