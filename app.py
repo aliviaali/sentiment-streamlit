@@ -1,4 +1,5 @@
 import streamlit as st
+st.write("APP BERHASIL DIMUAT")
 import pickle
 import re
 
@@ -9,3 +10,4 @@ from Sastrawi.StopWordRemover.StopWordRemoverFactory import StopWordRemoverFacto
 nb = pickle.load(open("model_nb.pkl", "rb"))
 svm = pickle.load(open("model_svm.pkl", "rb"))
 tfidf = pickle.load(open("tfidf.pkl", "rb"))
+
